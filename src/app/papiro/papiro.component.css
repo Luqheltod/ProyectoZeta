@@ -1,57 +1,23 @@
-.container {
+.textpanel {
     position: relative;
-    text-align: center;
-    color: white;
-  }
-  
-  /* Bottom left text */
-  .bottom-left {
+    border: 1px dotted rgb(192, 176, 176);
+    display: inline-block; /* if you want this container to shrink-to-fit */
+}
+.textpanel img {
+    display: block;
+}
+.textpanel textarea {
     position: absolute;
-    bottom: 8px;
-    left: 16px;
-  }
-  
-  /* Top left text */
-  .top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-  }
-  
-  /* Top right text */
-  .top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-  }
-  
-  /* Bottom right text */
-  .bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-  }
-  
-  /* Centered text */
-  .centered {
-    position: absolute;
-    top: 40%;
-    left: 50%;
+    margin-top:40%;
+    margin-left: 50%;
+    resize:none;
     transform: translate(-50%, -50%);
-  }
-  .papiroText{
-      padding: 40px;
-  
-  }
+    background-color: transparent;
+    border: transparent;
+    z-index: 100;
+}
 
-  textarea {
-    background: transparent;
-    color: transparent;
-    resize: none;
-    border: 0 none;
-    width: 100%;
-    font-size: 5em;
-    outline: none;
-    height: 100%;
-    position: absolute;
-  }
+.papiroTextarea{
+    width:40%;
+    height: 40%;
+}
