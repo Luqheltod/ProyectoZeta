@@ -1,0 +1,16 @@
+.half-container{
+    float: right;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 7%;
+    padding: 1em;
+}
+.a{
+    background: #333;
+}
+.b{
+    background: rgb(0, 0, 0);
+}
+
+.bordeado{border: 1px solid rgb(192, 176, 176);}
