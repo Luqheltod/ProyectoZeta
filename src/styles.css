@@ -7,9 +7,14 @@ body {
   margin: 0 0 100px;
   /* bottom = footer height */
   padding: 0px;
+  background-color: black; 
+  overflow-x: hidden;
 }
 .mainColor {
   background-color: black;  
+}
+p{
+  color:blanchedalmond
 }
 .footer{
   position: absolute;
