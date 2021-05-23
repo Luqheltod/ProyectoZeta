@@ -1,6 +1,6 @@
 .textpanel {
     position: relative;
-    border: 1px dotted rgb(192, 176, 176);
+    
     display: inline-block; /* if you want this container to shrink-to-fit */
 }
 .textpanel img {
