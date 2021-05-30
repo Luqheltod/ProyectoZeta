@@ -14,7 +14,9 @@ export class PapiroComponent implements OnInit {
   constructor(private papiroService: PapiroService) { }
 
   ngOnInit(): void {
-    this.papiro=  this.papiroService.getPapiro();
+      this.papiroService.getPapiro().subscribe(
+        papiro => this.papiro = papiro
+      );
   }
 
 }
