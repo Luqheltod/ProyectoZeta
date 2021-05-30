@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Papiro } from './papiro';
-import {PAPIRO} from './papiro.json';
+import { PapiroService } from './papiro.service';
+
 @Component({
   selector: 'app-papiro',
   templateUrl: './papiro.component.html',
@@ -10,10 +11,10 @@ export class PapiroComponent implements OnInit {
 
   papiro: Papiro  ;
  
-  constructor() { }
+  constructor(private papiroService: PapiroService) { }
 
   ngOnInit(): void {
-    this.papiro=  PAPIRO;
+    this.papiro=  this.papiroService.getPapiro();
   }
 
 }
