@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PapiroComponent } from './papiro/papiro.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { MapaComponent } from './mapa/mapa.component';
+import {PapiroService} from './papiro/papiro.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MapaComponent } from './mapa/mapa.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [PapiroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

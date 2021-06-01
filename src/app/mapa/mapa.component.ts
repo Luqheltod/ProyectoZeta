@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Papiro } from '../papiro/papiro';
+import { PapiroService } from '../papiro/papiro.service';
+import { Mapa } from './mapa';
 
 @Component({
   selector: 'app-mapa',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaComponent implements OnInit {
 
-  constructor() { }
+  papiro: Papiro  ;
+  mapa: Mapa;
+  constructor(private papiroService: PapiroService) { }
 
   ngOnInit(): void {
-  }
+    this.papiroService.getPapiro().subscribe(
+      papiro => this.papiro = papiro
+    );
 
-}
+}}
