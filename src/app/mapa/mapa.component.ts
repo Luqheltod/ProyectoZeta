@@ -15,7 +15,7 @@ export class MapaComponent implements OnInit {
   constructor(private papiroService: PapiroService) { }
 
   ngOnInit(): void {
-    this.papiroService.getPapiro().subscribe(
+    this.papiroService.getPapiro(1).subscribe(
       papiro => this.papiro = papiro
     );
 

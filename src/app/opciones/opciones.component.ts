@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Papiro } from '../papiro/papiro';
+import { PapiroService } from '../papiro/papiro.service';
 
 @Component({
   selector: 'app-opciones',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpcionesComponent implements OnInit {
 
-  constructor() { }
+  papiro: Papiro  ;
+
+  constructor(private papiroService: PapiroService) { }
 
   ngOnInit(): void {
-  }
+    this.papiroService.getPapiro(1).subscribe(
+      papiro => this.papiro = papiro
+    );
+}
 
 }

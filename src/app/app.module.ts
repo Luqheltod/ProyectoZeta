@@ -8,6 +8,7 @@ import { PapiroComponent } from './papiro/papiro.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { MapaComponent } from './mapa/mapa.component';
 import {PapiroService} from './papiro/papiro.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PapiroService} from './papiro/papiro.service';
     MapaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [PapiroService],
   bootstrap: [AppComponent]
