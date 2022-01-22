@@ -9,6 +9,8 @@ import { OpcionesComponent } from './opciones/opciones.component';
 import { MapaComponent } from './mapa/mapa.component';
 import {PapiroService} from './papiro/papiro.service';
 import {HttpClientModule} from '@angular/common/http';
+import { Papiro } from './papiro/papiro';
+import { Globals } from './papiro/globals';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [PapiroService],
+  providers: [PapiroService, Papiro,Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

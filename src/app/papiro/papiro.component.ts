@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from './globals';
 import { Papiro } from './papiro';
 import { PapiroService } from './papiro.service';
 
@@ -7,16 +8,14 @@ import { PapiroService } from './papiro.service';
   templateUrl: './papiro.component.html',
   styleUrls: ['./papiro.component.css']
 })
-export class PapiroComponent implements OnInit {
+export class PapiroComponent  {
 
-  papiro: Papiro  ;
+  
+  globals: Globals;
+  constructor( globals: Globals) {  this.globals = globals;}
+  
  
-  constructor(private papiroService: PapiroService) { }
 
-  ngOnInit(): void {
-      this.papiroService.getPapiro(1).subscribe(
-        papiro => this.papiro = papiro
-      );
-  }
+  
 
 }

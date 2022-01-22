@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../papiro/globals';
 import { Papiro } from '../papiro/papiro';
 import { PapiroService } from '../papiro/papiro.service';
 
@@ -7,16 +8,27 @@ import { PapiroService } from '../papiro/papiro.service';
   templateUrl: './opciones.component.html',
   styleUrls: ['./opciones.component.css']
 })
-export class OpcionesComponent implements OnInit {
+export class OpcionesComponent  {
 
+  private role: string;
   papiro: Papiro  ;
 
-  constructor(private papiroService: PapiroService) { }
+  constructor(public papiroService: PapiroService,public globals: Globals) { this.role=globals.role}
 
-  ngOnInit(): void {
-    this.papiroService.getPapiro(1).subscribe(
-      papiro => this.papiro = papiro
-    );
+  clickFunction(id): void{
+    this.papiroService.getPapiro(id).subscribe(
+        papiro => this.papiro = papiro
+      );
+      this.globals.role = this.papiro.texto;
+  }
+
+
 }
 
-}
+
+
+/*clickFunction() {
+
+  alert("clicked me!");
+
+}*/
