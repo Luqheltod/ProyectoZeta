@@ -11,6 +11,7 @@ import {PapiroService} from './papiro/papiro.service';
 import {HttpClientModule} from '@angular/common/http';
 import { Papiro } from './papiro/papiro';
 import { Globals } from './papiro/globals';
+import { MainContainerComponent } from './container/main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Globals } from './papiro/globals';
     FooterComponent,
     PapiroComponent,
     OpcionesComponent,
-    MapaComponent
+    MapaComponent,
+    MainContainerComponent
   ],
   imports: [
     BrowserModule,
