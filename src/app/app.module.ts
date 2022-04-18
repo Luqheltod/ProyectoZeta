@@ -13,6 +13,7 @@ import { Papiro } from './papiro/papiro';
 import { Globals } from './papiro/globals';
 import { MainContainerComponent } from './container/main-container/main-container.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,10 @@ import { MainContainerComponent } from './container/main-container/main-containe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [PapiroService, Papiro,Globals],
+  providers: [PapiroService, Papiro,Globals,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

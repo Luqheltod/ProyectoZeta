@@ -1,0 +1,20 @@
+export interface Option{
+    idOptions : number,
+    idStage : number,
+    textOption : string,
+    lifedrain : number,
+    energydrain : number,
+    toStage : number,
+}
+
+export function createOption(option: Partial<Option>): Option {
+    return {
+     idOptions : option.idOptions,
+     idStage : option.idStage,
+     textOption : option.textOption,
+     lifedrain : option.lifedrain,
+     energydrain : option.energydrain,
+     toStage : option.toStage
+    
+    };
+  }
