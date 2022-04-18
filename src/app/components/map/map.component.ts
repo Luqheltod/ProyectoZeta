@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
+
+  map : string = "assets/img/habitacion1.png";
+
   constructor() { }
 
   ngOnInit(): void {
