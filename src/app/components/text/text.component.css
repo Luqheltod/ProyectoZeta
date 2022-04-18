@@ -1,0 +1,35 @@
+.text{
+    min-height: 72vh;
+}
+
+
+.textpanel {
+    position: relative;
+    
+    display: inline-block; /* if you want this container to shrink-to-fit */
+}
+.textpanel img {
+    display: block;
+}
+textarea {
+    position: absolute;
+    margin-top:40%;
+    margin-left: 50%;
+    resize:none;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: transparent;
+    z-index: 100;
+}
+
+.papiroTextarea{
+    width:40%;
+    height: 40%;
+}
+
+.texto{
+    border: solid;
+    min-height: 70vh;
+    max-height: 70vh;
+    overflow: auto;
+}
