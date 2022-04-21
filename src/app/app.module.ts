@@ -12,6 +12,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { Papiro } from './papiro/papiro';
 import { Globals } from './papiro/globals';
 import { MainContainerComponent } from './container/main-container/main-container.component';
+import { StageContainerComponent } from './container/stage-container/stage-container.component';
+import { OptionsComponent } from './components/options/options.component';
+import { TextComponent } from './components/text/text.component';
+import { MapComponent } from './components/map/map.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+import { SnackBarRestComponent } from './shared/snack-bar-rest/snack-bar-rest.component';
 
 
 @NgModule({
@@ -22,11 +31,22 @@ import { MainContainerComponent } from './container/main-container/main-containe
     PapiroComponent,
     OpcionesComponent,
     MapaComponent,
-    MainContainerComponent
+    MainContainerComponent,
+    StageContainerComponent,
+    OptionsComponent,
+    TextComponent,
+    MapComponent,
+    SnackBarRestComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+
+    //material
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatIconModule,
     
   ],
   providers: [PapiroService, Papiro,Globals,],

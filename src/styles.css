@@ -21,8 +21,17 @@ p{
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 100px;
+  height: 78px;
   width: 100%;
   overflow:hidden;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.snack-bar-rest {
+  background-color: #9c9c8d;
+  color: rgb(128, 8, 8);
+}
