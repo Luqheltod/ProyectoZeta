@@ -1,8 +1,8 @@
 <div class="container d-flex align-items-center map"> 
-<div class="row">
-    <p style="text-align: center; color:red"> Piso 4 Habitacion 1 </p>
+<div *ngIf="map" class="row">
+    <p style="text-align: center; color:red"> {{flat}} </p>
      
-          <img src={{map}} alt="">
+          <img src={{locationImg}}{{map}} alt="">
      
   </div>
 </div>

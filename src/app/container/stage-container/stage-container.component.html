@@ -1,13 +1,24 @@
 <div class="container-fluid h-100 w-100"> 
+  <mat-icon>
+    flash_on
+     </mat-icon>
+     <mat-icon>
+      favorite
+       </mat-icon>
     <div class="row h-100">
         <div class="col-sm-3 h-100">
          <app-options></app-options>
         </div>
         <div class="col-sm-6 h-100">
-         <app-text> </app-text>
+         <app-text [text] ="stage?.text"> 
+
+         </app-text>
         </div>
         <div class="col-sm-3 h-100">
-         <app-map></app-map>
+         <app-map
+          [map] = "stage?.mapName"
+          [flat] = "stage?.flat"
+         ></app-map>
         </div>
       </div>   
 </div>
