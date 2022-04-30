@@ -2,13 +2,13 @@
  
 <div class="container d-flex align-items-center  options"> 
 <div class="row">
-    <p style="text-align: center; color:red"> Elige que hacer a continuación </p>
+    <p style="text-align: center; color:red; font-family: monospace;"> Elige que hacer a continuación </p>
       <div class="col-md-12 text-center">
         <div *ngFor ="let option of stage.options ; index as i"> 
           <button type="button" class="btn btn-secondary botonera" (click)="nextStage(option)">{{option.textOption}}</button> 
         </div>
         
-        <button matTooltip="Solo puedes descansar una vez por habitación" [matTooltipDisabled]="!disabled"
+        <button matTooltip="Solo puedes descansar una vez por habitación" [matTooltipDisabled]="!disabled" matTooltipClass="rest"
          type="button" [ngClass]="{'disable': (disabled) }" class="btn btn-secondary botonera" (click)="rest()">Descansar </button> 
         
       </div>
