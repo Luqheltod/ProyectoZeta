@@ -4,11 +4,11 @@ import { createOption, Option } from "./option";
 export interface Stage{
 
     idStage? : number ,
-    text : string,
-    mapName : string ,
-    flat : string ,
-    options : Array<Partial<Option>>;
-    finalStage : boolean
+    text? : string,
+    mapName? : string ,
+    flat? : string ,
+    options? : Array<Partial<Option>>;
+    finalStage? : boolean
 
 }
 
@@ -18,7 +18,7 @@ export function createStage(stage: Partial<Stage>): Stage {
      text : stage.text,
      mapName : stage.mapName,
      flat : stage.flat,
-     options : stage.options?.map(createOption) ?? [],
+     options : stage.options?.map(option=> createOption(option)) ?? [],
      finalStage : stage.finalStage
     };
 }

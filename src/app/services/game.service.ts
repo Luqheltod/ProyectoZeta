@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Stage } from "../models/stage";
+import { map } from "rxjs/operators";
+import { createStage, Stage } from "../models/stage";
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
@@ -15,4 +16,9 @@ export class GameService {
         return this.http.get<Stage>(this.urlEndPoint+`stage/${idStage}`);
       }
 
+      getStage(idStage: number): Observable<Stage> {
+        return this.http.get<Stage>(this.urlEndPoint+`stage/${idStage}`)
+        .pipe(map(stage => createStage(stage)));
+      }
+    
 }

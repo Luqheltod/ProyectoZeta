@@ -1,11 +1,16 @@
+<section *ngIf="stage!=null"> 
+ 
 <div class="container d-flex align-items-center  options"> 
 <div class="row">
     <p style="text-align: center; color:red"> Elige que hacer a continuación </p>
       <div class="col-md-12 text-center">
-        <button type="button" class="btn btn-secondary botonera">ola</button> 
-        <button type="button" class="btn btn-secondary botonera" (click)="rest()">Secondary option mas pequeña </button> 
-        <button type="button" class="btn btn-secondary botonera">Secondary</button> 
-        <button type="button" class="btn btn-secondary botonera">Otra opcion que puede salir o no</button>
+        <div *ngFor ="let option of stage.options ; index as i"> 
+          <button type="button" class="btn btn-secondary botonera" (click)="nextStage(option)">{{option.textOption}}</button> 
+        </div>
+        
+        <button type="button" class="btn btn-secondary botonera" (click)="rest()">Descansar </button> 
+        
       </div>
   </div>
 </div>
+</section>
