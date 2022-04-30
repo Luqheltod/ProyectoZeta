@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Stage } from 'src/app/models/stage';
 import { SnackBarRestComponent } from 'src/app/shared/snack-bar-rest/snack-bar-rest.component';
@@ -12,26 +12,34 @@ import { StageService } from 'src/app/state/stage.service';
   templateUrl: './options.component.html',
   styleUrls: ['./options.component.css']
 })
-export class OptionsComponent implements OnInit {
+export class OptionsComponent implements OnInit, OnChanges {
 
   disabled : boolean ;
-  stage : Stage;
+  
 
   restMsg : string = "Mensaje"
+
+  @Input() stage : Stage;
 
   @Output() healthModifier: EventEmitter<number> = new EventEmitter();
   @Output() energyModifier: EventEmitter<number> = new EventEmitter();
 
-  constructor(private readonly snackBar: MatSnackBar, private readonly stageQuery : StageQuery , private readonly stageService : StageService) { }
+  constructor(private readonly snackBar: MatSnackBar,  private readonly stageService : StageService) { }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.stage){
+      this.disabled = false;
+    }
+  }
 
   ngOnInit(): void {
 
-    this.stageQuery.selectStage.subscribe(stage=> this.stage = stage);
+   
 
   }
 
 
-  rest(restModifier : number){
+  rest(){
     if(this.disabled){
       return;
     }
