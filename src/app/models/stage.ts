@@ -8,7 +8,8 @@ export interface Stage{
     mapName? : string ,
     flat? : string ,
     options? : Array<Partial<Option>>;
-    finalStage? : boolean
+    finalStage? : boolean,
+    restModifier : number
 
 }
 
@@ -19,6 +20,7 @@ export function createStage(stage: Partial<Stage>): Stage {
      mapName : stage.mapName,
      flat : stage.flat,
      options : stage.options?.map(option=> createOption(option)) ?? [],
-     finalStage : stage.finalStage
+     finalStage : stage.finalStage,
+     restModifier : stage.restModifier
     };
 }

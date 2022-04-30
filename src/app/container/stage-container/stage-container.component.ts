@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { isUndefined } from '@datorama/akita';
 import { Stage } from 'src/app/models/stage';
-import { GameService } from 'src/app/services/game.service';
+
 import { StageQuery } from 'src/app/state/stage.query';
 import { StageService } from 'src/app/state/stage.service';
 
@@ -15,8 +15,12 @@ export class StageContainerComponent implements OnInit , OnDestroy{
   //Codigo del juego salvado, si usan f5 o refrescan la pagina usaremos el codigo para obtener los datos de su juego. 
  gameCode = localStorage.getItem("gameCode");
 
-
+  health : number = 250;
+  energy : number = 400;
   stage : Stage ;
+
+ 
+
 
   constructor( private readonly stageQuery : StageQuery , private readonly stageService : StageService) { }
   ngOnDestroy(): void {
@@ -34,4 +38,12 @@ export class StageContainerComponent implements OnInit , OnDestroy{
     this.stageQuery.selectStage.subscribe(stage=> this.stage = stage);
   }
 
+
+  energyModify(energyModifier : number){
+    this.energy += energyModifier;
+  }
+
+  healthModify(healthModifier : number){
+    this.health += healthModifier;
+  }
 }

@@ -8,7 +8,8 @@
           <button type="button" class="btn btn-secondary botonera" (click)="nextStage(option)">{{option.textOption}}</button> 
         </div>
         
-        <button type="button" class="btn btn-secondary botonera" (click)="rest()">Descansar </button> 
+        <button matTooltip="Solo puedes descansar una vez por habitación" [matTooltipDisabled]="!disabled"
+         type="button" [ngClass]="{'disable': (disabled) }" class="btn btn-secondary botonera" (click)="rest()">Descansar </button> 
         
       </div>
   </div>

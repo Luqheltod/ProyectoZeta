@@ -1,13 +1,19 @@
 <div class="container-fluid h-100 w-100"> 
-  <mat-icon>
-    flash_on
-     </mat-icon>
-     <mat-icon>
-      favorite
-       </mat-icon>
+  <div class="health-energy"> 
+    <p>
+     <span> Energia {{energy}} </span>  <mat-icon style="color:aqua;">flash_on</mat-icon>
+     <span>Vida {{health}}  </span>  <mat-icon style="color:red;">favorite</mat-icon> 
+   </p> 
+   </div>
+  
+     
+     
     <div class="row h-100">
         <div class="col-sm-3 h-100">
-         <app-options></app-options>
+         <app-options
+         (energyModifier)="energyModify($event)"
+         (healthModifier)="healthModify($event)"
+         ></app-options>
         </div>
         <div class="col-sm-6 h-100">
          <app-text [text] ="stage?.text"> 

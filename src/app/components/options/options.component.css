@@ -20,3 +20,9 @@
 .options{
     min-height: 72vh;
 }
+
+.disable{
+    color: grey;
+    background-color: black;
+    cursor:not-allowed;
+}

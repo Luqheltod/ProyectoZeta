@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Stage } from 'src/app/models/stage';
 import { SnackBarRestComponent } from 'src/app/shared/snack-bar-rest/snack-bar-rest.component';
@@ -14,10 +14,13 @@ import { StageService } from 'src/app/state/stage.service';
 })
 export class OptionsComponent implements OnInit {
 
-
+  disabled : boolean ;
   stage : Stage;
 
   restMsg : string = "Mensaje"
+
+  @Output() healthModifier: EventEmitter<number> = new EventEmitter();
+  @Output() energyModifier: EventEmitter<number> = new EventEmitter();
 
   constructor(private readonly snackBar: MatSnackBar, private readonly stageQuery : StageQuery , private readonly stageService : StageService) { }
 
@@ -28,7 +31,14 @@ export class OptionsComponent implements OnInit {
   }
 
 
-  rest(){
+  rest(restModifier : number){
+    if(this.disabled){
+      return;
+    }
+    this.disabled = true;
+ console.log(this.stage.restModifier);
+    //Servicio de descansar con el modificador
+
   this.snackBar.openFromComponent(SnackBarRestComponent,
     {
       data: {
@@ -40,8 +50,10 @@ export class OptionsComponent implements OnInit {
       verticalPosition: 'top',
       horizontalPosition: 'center'
     }
+  
   );
-
+  this.energyModifier.emit(-20);
+  this.healthModifier.emit(20);
 }
 
 nextStage(option : Option): void{
