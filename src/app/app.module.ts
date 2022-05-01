@@ -11,7 +11,6 @@ import {PapiroService} from './papiro/papiro.service';
 import {HttpClientModule} from '@angular/common/http';
 import { Papiro } from './papiro/papiro';
 import { Globals } from './papiro/globals';
-import { MainContainerComponent } from './container/main-container/main-container.component';
 import { StageContainerComponent } from './container/stage-container/stage-container.component';
 import { OptionsComponent } from './components/options/options.component';
 import { TextComponent } from './components/text/text.component';
@@ -28,10 +27,6 @@ import { SnackBarRestComponent } from './shared/snack-bar-rest/snack-bar-rest.co
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PapiroComponent,
-    OpcionesComponent,
-    MapaComponent,
-    MainContainerComponent,
     StageContainerComponent,
     OptionsComponent,
     TextComponent,
