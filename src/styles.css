@@ -43,8 +43,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 */
 .snack-bar-rest {
-  background-color: #9c9c8d;
+  background-color: #000000;
   color: rgb(128, 8, 8);
+  border-radius: 36px !important;
+  position: absolute;
+  left: 0%;
+  top: 58%;
+  border: 1px solid #ff0000;
+  text-align: center;
+  min-width: 33vh;
 }
 
 .mat-tooltip.rest {

@@ -60,9 +60,9 @@ export class OptionsComponent implements OnInit, OnChanges {
           },
           politeness: 'polite',
           panelClass: 'snack-bar-rest',
-          duration: 24000,
-          verticalPosition: 'top',
-          horizontalPosition: 'center'
+          duration: 2400000,
+        
+          
         }
       
       );
