@@ -5,6 +5,7 @@ export interface Option{
     lifedrain : number,
     energydrain : number,
     toStage : number,
+    instadeath : boolean,
 }
 
 export function createOption(option: Partial<Option>): Option {
@@ -14,7 +15,8 @@ export function createOption(option: Partial<Option>): Option {
      textOption : option.textOption,
      lifedrain : option.lifedrain,
      energydrain : option.energydrain,
-     toStage : option.toStage
+     toStage : option.toStage,
+     instadeath : option.instadeath
     
     };
   }

@@ -25,6 +25,7 @@ export class OptionsComponent implements OnInit, OnChanges {
 
   @Output() healthModifier: EventEmitter<number> = new EventEmitter();
   @Output() energyModifier: EventEmitter<number> = new EventEmitter();
+  @Output() instadeath : EventEmitter<number> = new EventEmitter();
 
   constructor(
     private readonly snackBar: MatSnackBar,  
@@ -79,8 +80,18 @@ export class OptionsComponent implements OnInit, OnChanges {
 
 nextStage(option : Option): void{
 
+  if(option.instadeath) {
+    
+    this.instadeath.emit(option.idOptions);
+    return;
+  }
+ 
+
+  this.energyModifier.emit(option.energydrain);
+  this.healthModifier.emit(option.lifedrain);
+
   this.stageService.setStageAkita(option.toStage).subscribe();
-   console.log(option.toStage);
+   
 }
 }
 

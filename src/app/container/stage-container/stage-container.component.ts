@@ -46,4 +46,9 @@ export class StageContainerComponent implements OnInit , OnDestroy{
   healthModify(healthModifier : number){
     this.health += healthModifier;
   }
+
+  deathForOption(idOptions : number) {
+   
+    console.log("saco el modal y solo puedes empezar el idOptions " + idOptions);
+  }
 }
