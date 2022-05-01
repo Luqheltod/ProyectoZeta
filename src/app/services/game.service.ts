@@ -2,11 +2,15 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { InstaDeathInfo } from "../models/instadeath";
 import { RestInfo } from "../models/restInfo";
 import { createStage, Stage } from "../models/stage";
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
+
+
+  
 
 
 
@@ -28,5 +32,8 @@ export class GameService {
         return this.http.get<RestInfo>(this.urlEndPoint+`rest/${restModifier}`);
       }
     
+      getInstadeathInfo(idOptions: number) : Observable<InstaDeathInfo> {
+        return this.http.get<InstaDeathInfo>(this.urlEndPoint+`instadeath/${idOptions}`);
+      }
     
 }

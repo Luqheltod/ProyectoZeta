@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { isUndefined } from '@datorama/akita';
 import { Stage } from 'src/app/models/stage';
+import { GameService } from 'src/app/services/game.service';
 
 import { StageQuery } from 'src/app/state/stage.query';
 import { StageService } from 'src/app/state/stage.service';
@@ -22,7 +23,10 @@ export class StageContainerComponent implements OnInit , OnDestroy{
  
 
 
-  constructor( private readonly stageQuery : StageQuery , private readonly stageService : StageService) { }
+  constructor( private readonly stageQuery : StageQuery , 
+    private readonly stageService : StageService,
+    private readonly gameService :GameService
+    ) { }
   ngOnDestroy(): void {
     localStorage.clear();
   }
@@ -49,6 +53,8 @@ export class StageContainerComponent implements OnInit , OnDestroy{
 
   deathForOption(idOptions : number) {
    
+    this.gameService.getInstadeathInfo(idOptions).subscribe();
+
     console.log("saco el modal y solo puedes empezar el idOptions " + idOptions);
   }
 }
