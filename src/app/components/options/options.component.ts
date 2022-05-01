@@ -5,6 +5,8 @@ import { SnackBarRestComponent } from 'src/app/shared/snack-bar-rest/snack-bar-r
 import { StageQuery } from 'src/app/state/stage.query';
 import { Option } from 'src/app/models/option';
 import { StageService } from 'src/app/state/stage.service';
+import { GameService } from 'src/app/services/game.service';
+import { RestInfo } from 'src/app/models/restInfo';
 
 
 @Component({
@@ -17,14 +19,18 @@ export class OptionsComponent implements OnInit, OnChanges {
   disabled : boolean ;
   
 
-  restMsg : string = "Mensaje"
+  restInfo: RestInfo;  
 
   @Input() stage : Stage;
 
   @Output() healthModifier: EventEmitter<number> = new EventEmitter();
   @Output() energyModifier: EventEmitter<number> = new EventEmitter();
 
-  constructor(private readonly snackBar: MatSnackBar,  private readonly stageService : StageService) { }
+  constructor(
+    private readonly snackBar: MatSnackBar,  
+    private readonly stageService : StageService, 
+    private readonly gameService : GameService
+    ) { }
   
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.stage){
@@ -43,25 +49,32 @@ export class OptionsComponent implements OnInit, OnChanges {
     if(this.disabled){
       return;
     }
-    this.disabled = true;
- console.log(this.stage.restModifier);
-    //Servicio de descansar con el modificador
 
-  this.snackBar.openFromComponent(SnackBarRestComponent,
-    {
-      data: {
-        html: this.restMsg
-      },
-      politeness: 'polite',
-      panelClass: 'snack-bar-rest',
-      duration: 24000,
-      verticalPosition: 'top',
-      horizontalPosition: 'center'
-    }
-  
-  );
-  this.energyModifier.emit(-20);
-  this.healthModifier.emit(20);
+    this.gameService.rest(this.stage.restModifier).subscribe(restInfo => {
+      this.restInfo = restInfo
+
+      this.snackBar.openFromComponent(SnackBarRestComponent,
+        {
+          data: {
+            html: restInfo.message
+          },
+          politeness: 'polite',
+          panelClass: 'snack-bar-rest',
+          duration: 24000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center'
+        }
+      
+      );
+      this.energyModifier.emit(this.restInfo.energyDifference);
+      this.healthModifier.emit(this.restInfo.lifeDifference);
+      this.disabled = true;
+    } );
+    
+ 
+   
+
+ 
 }
 
 nextStage(option : Option): void{
