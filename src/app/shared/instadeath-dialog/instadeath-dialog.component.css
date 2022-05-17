@@ -1,0 +1,23 @@
+.textboxtitle{
+    font:400 18px/20px Roboto, "Helvetica Neue", sans-serif;
+      text-align: center;
+      margin: 2em;
+  }
+  
+ 
+  
+    .submit-valoration{
+      text-align: center;
+      margin-left: 21%;
+    }
+  
+  
+    h2{text-align: -webkit-center;
+      margin-right: 3em;
+      margin-left: 3em;}
+
+     .restart-button{
+        margin: auto;
+        background-color: cornsilk;
+        border-radius: 20px;
+     }

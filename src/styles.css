@@ -59,3 +59,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 14px;
   color:red;
 }
+
+
+.instadeath-dialog-container .mat-dialog-container {
+  padding: 1px;
+  background-color: black;
+  border: solid 1px red;
+  text-align: center;
+  overflow: hidden;
+}

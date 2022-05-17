@@ -16,6 +16,8 @@ import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/mater
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { SnackBarRestComponent } from './shared/snack-bar-rest/snack-bar-rest.component';
+import { InstadeathDialogComponent } from './shared/instadeath-dialog/instadeath-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { SnackBarRestComponent } from './shared/snack-bar-rest/snack-bar-rest.co
     OptionsComponent,
     TextComponent,
     MapComponent,
-    SnackBarRestComponent
+    SnackBarRestComponent,
+    InstadeathDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { SnackBarRestComponent } from './shared/snack-bar-rest/snack-bar-rest.co
     MatSnackBarModule,
     MatTooltipModule,
     MatIconModule,
+    MatDialogModule
     
   ],
   providers: [],
