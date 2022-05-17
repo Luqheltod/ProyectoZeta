@@ -29,8 +29,11 @@
 
 .restbutton{
     cursor: cell;
+    position:fixed;
+    top:20px;
     
 }
 .restbutton:hover {
     opacity: 0.5 !important;
   }
+
