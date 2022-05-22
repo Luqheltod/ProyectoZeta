@@ -1,4 +1,4 @@
-<div class="container-fluid h-100 w-100"> 
+<div class="container-fluid h-85 w-100"> 
   <div class="health-energy"> 
     <p>
      <span> Energia {{energy}} </span>  <mat-icon style="color:aqua;">flash_on</mat-icon>
@@ -9,7 +9,7 @@
      
      
     <div class="row h-100">
-        <div class="col-sm-3 h-100">
+        <div class="col-sm-3 h-100 opciones">
          <app-options
          [stage]="stage"
          (energyModifier)="energyModify($event)"

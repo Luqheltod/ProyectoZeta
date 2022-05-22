@@ -2,3 +2,9 @@
     position: fixed;
     top: 20px;
 }
+
+.opciones{
+    display: inline-block;
+    max-height: 75%;
+    overflow: auto;
+}

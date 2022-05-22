@@ -1,9 +1,9 @@
 
-<div > <img style="height: fit-content; max-width: 90px;" src="assets/img/skull.jpg"> <h2 center mat-dialog-title style="color:red;">HAS MUERTO</h2> </div>
+<div class="container"> <img style="height: fit-content; max-width: 90px;" src="assets/img/skull.jpg"> <h2 center mat-dialog-title style="color:red;">HAS MUERTO</h2> 
 <hr>
 
-<div >
-<p>  {{message}}</p>
+
+<p [innerHTML]="message">  </p>
 
 <mat-dialog-actions style="text-align: center; align-items: center;">
  

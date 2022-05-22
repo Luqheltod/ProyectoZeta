@@ -18,8 +18,8 @@ export class StageContainerComponent implements OnInit , OnDestroy{
   //Codigo del juego salvado, si usan f5 o refrescan la pagina usaremos el codigo para obtener los datos de su juego. 
  gameCode = localStorage.getItem("gameCode");
 
-  health : number = 200;
-  energy : number = 300;
+  health : number = 150;
+  energy : number = 200;
   stage : Stage ;
 
  
@@ -48,10 +48,16 @@ export class StageContainerComponent implements OnInit , OnDestroy{
 
   energyModify(energyModifier : number){
     this.energy += energyModifier;
+    if(this.energy<0){
+      this.deathForOption(0)
+    }
   }
 
   healthModify(healthModifier : number){
     this.health += healthModifier;
+    if(this.health<0){
+      this.deathForOption(0)
+    }
   }
 
   deathForOption(idOptions : number) {
@@ -61,7 +67,7 @@ export class StageContainerComponent implements OnInit , OnDestroy{
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.width = "500px";
-      dialogConfig.height = "fit-content";
+      dialogConfig.height = "541px";
       dialogConfig.panelClass = "instadeath-dialog-container";
       
       
