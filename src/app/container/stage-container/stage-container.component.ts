@@ -18,8 +18,8 @@ export class StageContainerComponent implements OnInit , OnDestroy{
   //Codigo del juego salvado, si usan f5 o refrescan la pagina usaremos el codigo para obtener los datos de su juego. 
  gameCode = localStorage.getItem("gameCode");
 
-  health : number = 150;
-  energy : number = 200;
+  health : number = 120;
+  energy : number = 165;
   stage : Stage ;
 
  
@@ -99,6 +99,6 @@ export class StageContainerComponent implements OnInit , OnDestroy{
 
    
 
-    console.log("saco el modal y solo puedes empezar el idOptions " + idOptions);
+    console.log(idOptions);
   }
 }

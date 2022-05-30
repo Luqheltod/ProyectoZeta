@@ -61,7 +61,7 @@ export class OptionsComponent implements OnInit, OnChanges {
           },
           politeness: 'polite',
           panelClass: 'snack-bar-rest',
-          duration: 2400000,
+          duration: 7000,
         
           
         }
